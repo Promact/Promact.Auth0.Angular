@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,16 +7,23 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-  protected readonly singupForm: FormGroup;
+  protected readonly signupForm: FormGroup;
 
   constructor() {
-    this.singupForm = new FormGroup({
+    this.signupForm = new FormGroup({
       email: new FormControl('', { nonNullable: true }),
+      password: new FormControl('', { nonNullable: true }),
+      name: new FormControl('', { nonNullable: true }),
+      Iagree: new FormControl(false, { nonNullable: true })
     });
   }
 
 
   ngOnInit(): void {
+  }
+
+  Register() {
+
   }
 
 }
